@@ -13,6 +13,7 @@ def hour_format(str_hour):
 
 schedule = []
 d_general = {}
+d_veces = {}
 
 
 with open(file='./data/Schedule.txt', mode='r', encoding='utf-8') as file:
@@ -35,3 +36,24 @@ for d_user in d_general.values():
         l_hours = hours.split("-")
         start_h = hour_format(l_hours[0])
         end_h = hour_format(l_hours[1])
+        for name_emplo_friend, hours_friend in d_user.items():
+            if name_employee != name_emplo_friend:
+                l_hours_friend = hours_friend.split("-")
+                start_h_friend = hour_format(l_hours_friend[0])
+                end_h_friend = hour_format(l_hours_friend[1])
+                if (start_h_friend <= start_h < end_h_friend) or (start_h_friend < end_h <= end_h_friend):
+                    d1 = d_veces.get((name_employee, name_emplo_friend))
+                    d2 = d_veces.get((name_emplo_friend, name_employee))
+                    if d1 is None and d2 is None:
+                        d_veces[(name_employee, name_emplo_friend)] = 0
+
+                    else:
+                        if d1 is not None:
+                            d_veces[(name_employee, name_emplo_friend)] = d_veces.get(
+                                (name_employee, name_emplo_friend), 0) + 1
+                        if d2 is not None:
+                            # d_veces[(name_emplo_friend, name_employee)] = d_veces.get(
+                            #     (name_emplo_friend, name_employee), 0) + 1
+                            print("hola")
+
+print(d_veces)
