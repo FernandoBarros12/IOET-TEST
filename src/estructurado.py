@@ -45,15 +45,10 @@ for d_user in d_general.values():
                     d1 = d_veces.get((name_employee, name_emplo_friend))
                     d2 = d_veces.get((name_emplo_friend, name_employee))
                     if d1 is None and d2 is None:
-                        d_veces[(name_employee, name_emplo_friend)] = 0
+                        d_veces[(name_employee, name_emplo_friend)] = 1
 
-                    else:
-                        if d1 is not None:
-                            d_veces[(name_employee, name_emplo_friend)] = d_veces.get(
-                                (name_employee, name_emplo_friend), 0) + 1
-                        if d2 is not None:
-                            # d_veces[(name_emplo_friend, name_employee)] = d_veces.get(
-                            #     (name_emplo_friend, name_employee), 0) + 1
-                            print("hola")
+                    elif d1 is not None:
+                        d_veces[(name_employee, name_emplo_friend)] = d_veces.get(
+                            (name_employee, name_emplo_friend), 0) + 1
 
 print(d_veces)
