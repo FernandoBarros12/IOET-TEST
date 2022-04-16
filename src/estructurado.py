@@ -2,10 +2,8 @@
 
 
 schedule = []
-# l_employees_names=[]
 with open('Schedule.txt', 'r', encoding='utf-8') as file:
     schedule=file.readlines()
-
 d_general = {}  # {name:d_schedule}
 
 for employee in schedule:  # creation of d_general
