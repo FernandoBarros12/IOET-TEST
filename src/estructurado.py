@@ -51,4 +51,5 @@ for d_user in d_general.values():
                         d_veces[(name_employee, name_emplo_friend)] = d_veces.get(
                             (name_employee, name_emplo_friend), 0) + 1
 
-print(d_veces)
+for names,times in d_veces.items():
+    print (f"{names[0]}-{names[1]}:{times}")
