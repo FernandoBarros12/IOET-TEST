@@ -2,4 +2,4 @@
 
 ## Autor ✒️
 
-* **Fernando Barros** - *Desarrollador* - [FernandoBarros12](https://github.com/FernandoBarros12)
+* **Fernando Barros** - *Developer* - [FernandoBarros12](https://github.com/FernandoBarros12)
