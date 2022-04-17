@@ -1,6 +1,6 @@
 '''Main File'''
 
-from functions import generate_schedule, count_concurrencies
+from functions import generate_schedule, count_concurrencies, submit_data
 
 schedule = []
 
@@ -9,6 +9,5 @@ with open(file='./data/Schedule.txt', mode='r', encoding='utf-8') as file:
 
 d_schedule=generate_schedule(schedule)
 d_concurrencies=count_concurrencies(d_schedule)
+submit_data(d_concurrencies)
 
-for names,times in d_concurrencies.items():
-    print (f"{names[0]}-{names[1]}:{times}")

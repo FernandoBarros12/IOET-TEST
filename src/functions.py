@@ -1,6 +1,7 @@
 '''Functions used in main program'''
 
 from datetime import time
+from tokenize import String
 
 def hour_format(str_hour):
     '''
@@ -9,6 +10,10 @@ def hour_format(str_hour):
     Parameters:
         str_hour(string): hour in string type for convertion
     '''
+
+    if not isinstance(str_hour, str):
+        raise TypeError("The hour must be a String")
+    
     l_hour = str_hour.split(":")
     return time(int(l_hour[0]), int(l_hour[1]))
 
@@ -53,3 +58,7 @@ def count_concurrencies (d_general):
                             d_concurrencies[(name_employee, name_emplo_friend)] = d_concurrencies.get(
                                 (name_employee, name_emplo_friend), 0) + 1
     return d_concurrencies
+
+def submit_data(d_concurrencies):
+    for names,times in d_concurrencies.items():
+        print (f"{names[0]}-{names[1]}:{times}")
