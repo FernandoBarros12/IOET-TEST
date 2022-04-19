@@ -1,10 +1,13 @@
 # IOET-TEST
 # Overview of the Solution
-The first thing to do is read the data from the .txt file, once done that, the next step  is to storage the data the most efficient way,
-which in this case is in a dictionary, with the day as key and for value the names and schedules of the employees as an inner dictionary. Storing the data in this way help us to relate the names of the employees who worked on the same day, so all we have left to do is compare the hours employees were in to find out if they were in the office together.
+The first thing to do is read the data from the .txt file, once done that, the next step  is to storage the data in the most efficient way, which in this case is in a dictionary, with the day as key and the names and schedules of the employees in an inner dictionary as value. Storing the data in this way help us to relate the names of the employees who worked on the same day, avoiding to use an extra iterator to compare this value, so all we have left to do is compare the hours employees were in to find out if they were in the office together.
 
 To do this, we have to iterate in the internal dictionaries, in which the name of the employee and the time in which he was in the office will be extracted. Then the start and end time will be compared with the other employees on that day, and they will be added to a new dictionary that will have as a key a tuple of the two employees that coincided and as a value the times they did so.
 # Approach and Methodology
+For this test I use the OOP paradigm because of its advantages when it comes to modify the code and protect the data used, to format the code I used pylint, which establishes generalized rules when coding and allows an easier reading for the developer. In addition, I use screaming architecture for a better project organization which helps other developers to understand the code.
+I choose the iterator desing pattern because it is the one that best fit the exercise because I had to use iterators to go through the information provided by the user and to storage that information I use dictionaries because of their Key-Value structure which will come handy later in the development of the exercise.
+
+I have 3 main files:The first one for the main class, the second one for the analyze data class and its methods and the third one for automated tests.
 
 # Execution
 Open a terminal and go to the directory 
@@ -28,6 +31,8 @@ or
 ```
 python -m unittest test/test_hours.py
 ```
+# Built With
+Python 3.10
 ## Autor ✒️
 
 * **Fernando Barros** - *Developer* - [FernandoBarros12](https://github.com/FernandoBarros12)
